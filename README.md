@@ -12,6 +12,9 @@ I'm seeing. Assistance appreciated.
 * `plotcos.sh` can be used to invoke `gnuplot` to show the
   differences graphically.
 
+* `tinycos.py` is a small reproducer published with the
+  issue report.
+
 # Usage
 
 Run `python3 cos.py` to get the maximum absolute error
