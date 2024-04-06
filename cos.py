@@ -6,7 +6,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--correction", help="Frequency correction", action="store_true")
 ap.add_argument("--plot", help="Output table for plotting", action="store_true")
 ap.add_argument("--sr", help="Sample rate", type=int, default=24000)
-ap.add_argument("--tf", help="Target frequency", type=int, default=250)
+ap.add_argument("--tf", help="Target frequency", type=float, default=250)
 ap.add_argument("--n", help="Window size", type=int, default=512)
 args = ap.parse_args()
 
