@@ -37,7 +37,7 @@ else:
     fc = f0
 
 # Generate time-domain cos().
-t = np.linspace(0, n / sr, n, dtype=np.float64)
+t = np.linspace(0, n / sr, n, dtype=np.float64, endpoint=False)
 y0 = np.cos(2 * np.pi * fc * t)
 
 # Generate FFT cos().
