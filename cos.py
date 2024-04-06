@@ -3,7 +3,6 @@ import numpy as np
 from numpy.fft import *
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--correction", help="Frequency correction", action="store_true")
 ap.add_argument("--plot", help="Output table for plotting", action="store_true")
 ap.add_argument("--sr", help="Sample rate", type=int, default=24000)
 ap.add_argument("--tf", help="Target frequency", type=float, default=250)
@@ -30,15 +29,9 @@ else:
 f0 = freqs[b]
 assert freqs[b] == -freqs[n - b]
 
-if args.correction:
-    # Correct the center frequency for time-domain cos().
-    fc = f0 * (n - 1) / n
-else:
-    fc = f0
-
 # Generate time-domain cos().
 t = np.linspace(0, n / sr, n, dtype=np.float64, endpoint=False)
-y0 = np.cos(2 * np.pi * fc * t)
+y0 = np.cos(2 * np.pi * f0 * t)
 
 # Generate FFT cos().
 f = np.zeros(n, dtype=np.complex128)
