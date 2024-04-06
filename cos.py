@@ -23,7 +23,10 @@ ntf = 2 * tf / sr
 # Get the closest FFT bin index.
 b = round(ntf * n / 2)
 # Get the bin center frequency.
-freqs = fftfreq(n, d=1/sr)
+if sr == 1:
+    freqs = fftfreq(n)
+else:
+    freqs = fftfreq(n, d=1/sr)
 f0 = freqs[b]
 assert freqs[b] == -freqs[n - b]
 
