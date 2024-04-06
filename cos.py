@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-from scipy.fft import *
+from numpy.fft import *
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--correction", help="Frequency correction", action="store_true")

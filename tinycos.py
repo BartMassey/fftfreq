@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.fft import *
+from numpy.fft import *
 
 sr = 24000
 tf = 250
